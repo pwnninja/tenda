@@ -8,7 +8,7 @@ Type:Stack overflow
 
 Author:heshizhi(Wuhan University)
 
-I found a buffer overflow vulnerability in the router's web server--httpd. While processing the "cmdinput" parameter for a post request, the value is directly "strcpy" to a variable on the stack, which overrides the return address of the function. A remote attacker can leak information or hijack program control flow, leading to a RCE.
+I found a buffer overflow vulnerability in the router's web server--httpd. While processing the "cmdinput" parameter for a post request to /goform/exeCommand, the value is directly "strcpy" to a variable on the stack, which overrides the return address of the function. A remote attacker can leak information or hijack program control flow, leading to a RCE.
 The details are shown below: 
 ![image](https://github.com/pwnninja/tenda/blob/main/images/formexeCommandStackoverflow1.png)
 
