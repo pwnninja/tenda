@@ -6,9 +6,10 @@ Author:heshizhi(Wuhan University)
 
 I found a buffer overflow vulnerability in the router's web server--httpd. While processing the "cmdinput" parameter for a post request, the value is directly "strcpy" to a variable on the stack, which overrides the return address of the function. A remote attacker can leak information or hijack program control flow, leading to a RCE.
 The details are shown below: 
+![image](https://github.com/pwnninja/tenda/blob/main/images/formexeCommandStackoverflow1.png)
 
 POC:
-
+![image](https://github.com/pwnninja/tenda/blob/main/images/formexeCommandStackoverflow2.png)
 
 As you can see in the above figure, if an attacker post data "cmdinput=a*0x300" to /goform/exeCommand, the return address of the function will be overriden and result in a DoS.
 
