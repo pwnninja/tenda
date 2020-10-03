@@ -1,7 +1,11 @@
 Vendor:Tenda https://www.tendacn.com
+
 Product:Tenda Router AC7/AC9/AC10/AC15/AC18
+
 Version:V15.03.2.13(AC9)    V15.03.05.05(AC15) and earlier
+
 Type:Stack overflow
+
 Author:heshizhi(Wuhan University)
 
 I found a buffer overflow vulnerability in the router's web server--httpd. While processing the "cmdinput" parameter for a post request, the value is directly "strcpy" to a variable on the stack, which overrides the return address of the function. A remote attacker can leak information or hijack program control flow, leading to a RCE.
