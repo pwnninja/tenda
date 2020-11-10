@@ -10,10 +10,10 @@ Author: heshizhi(Wuhan University)
 
 I found a buffer overflow vulnerability in the router's web server--httpd. While processing the "PPPOEPassword" parameter for a post request to /goform/QuickIndex, the value is copied to a variable on the stack via function sub_4F7C0, which overrides the return address of the function. A remote attacker can leak information or hijack program control flow, leading to a RCE.
 The details are shown below: 
-![image](https://github.com/pwnninja/tenda/blob/main/images/formQuickIndexStackoverflow1.PNG)
+![image](https://github.com/pwnninja/tenda/blob/main/images/formQuickIndexStackoverflow1.png)
 
 In function sub_4F7C0, string a1 copied to a2 without security check:
-![image](https://github.com/pwnninja/tenda/blob/main/images/formQuickIndexStackoverflow2.PNG)
+![image](https://github.com/pwnninja/tenda/blob/main/images/formQuickIndexStackoverflow2.png)
 
 POC:
 ![image](https://github.com/pwnninja/tenda/blob/main/images/formQuickIndexStackoverflow3.png)
