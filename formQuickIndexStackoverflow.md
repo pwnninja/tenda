@@ -19,7 +19,7 @@ POC:
 
 ![image](https://github.com/pwnninja/tenda/blob/main/images/formQuickIndexStackoverflow3.png)
 
-As you can see in the above picture, if an attacker post data "PPPOEPassword=aaaaaa..." to /goform/PowerSaveSet, the return address of the function will be overriden and result in a DoS.Futhermore, the attacker can exploit this vulnerability, using ROP to hijack control flow and execute arbitrary code on router with root privilege.
+As you can see in the above picture, if an attacker post data "PPPOEPassword=aaaaaa..." to /goform/QuickIndex, the return address of the function will be overriden and result in a DoS.Futhermore, the attacker can exploit this vulnerability, using ROP to hijack control flow and execute arbitrary code on router with root privilege.
 
 In the next picture, you can see the pid of httpd has been changed. That indicates a DoS has happened, causing the router to restart httpd:
 
