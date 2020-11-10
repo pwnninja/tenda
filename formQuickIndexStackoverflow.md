@@ -16,6 +16,7 @@ In function sub_4F7C0, string a1 copied to a2 without security check:
 ![image](https://github.com/pwnninja/tenda/blob/main/images/formQuickIndexStackoverflow2.png)
 
 POC:
+
 ![image](https://github.com/pwnninja/tenda/blob/main/images/formQuickIndexStackoverflow3.png)
 
 As you can see in the above picture, if an attacker post data "PPPOEPassword=aaaaaa..." to /goform/PowerSaveSet, the return address of the function will be overriden and result in a DoS.Futhermore, the attacker can exploit this vulnerability, using ROP to hijack control flow and execute arbitrary code on router with root privilege.
